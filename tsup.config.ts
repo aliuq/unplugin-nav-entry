@@ -13,6 +13,6 @@ export default <Options>{
   external: [
     'html-webpack-plugin',
     'fast-glob',
-    'open'
+    'open',
   ],
 }
