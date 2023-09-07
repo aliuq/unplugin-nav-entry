@@ -5,3 +5,4 @@ test
 playground
 .pnpm-store
 /*.png
+*cache
