@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>
+    <%= name %>
+  </title>
+  <style type="text/tailwindcss">
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      @apply bg-gray-100;
+    }
+    main {
+      @apply min-h-screen;
+    }
+    .title {
+      @apply h-16 bg-gray-800 flex items-center justify-center text-3xl text-white font-bold sticky top-0 z-10;
+    }
+    .card-outer {
+      @apply mx-auto py-12 px-4 sm:px-6 lg:px-8;
+    }
+    .card {
+      @apply grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+    }
+    .card-inner {
+      @apply col-span-1 rounded-md shadow border border-gray-300/70 hover:border-gray-300 hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-2;
+    }
+    .card-head {
+      @apply block text-[#303133] hover:text-blue-500;
+    }
+    .card-head .card-head-title {
+      @apply text-lg leading-6 font-semibold border-b border-gray-300/70 p-4 flex items-center justify-between;
+    }
+    .card-head .card-head-title .card-title {
+      @apply flex-1 truncate;
+    }
+    .card-head .card-head-title .card-active {
+      @apply relative flex h-3 w-3 ml-[20px];
+    }
+    .card-head .card-head-title .card-active .card-active-ping {
+      @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75;
+    }
+    .card-head .card-head-title .card-active .card-active-span {
+      @apply relative inline-flex rounded-full h-3 w-3 bg-sky-500;
+    }
+    .card-content {
+      @apply p-4;
+    }
+    .card-item {
+      @apply text-sm leading-5 text-[#606266] break-all flex items-center;
+    }
+    .card-item + .card-item {
+      @apply my-3;
+    }
+    .card-item:last-child {
+      @apply mb-0;
+    }
+    .card-label {
+      @apply text-right mr-2 self-start;
+      flex: 0 0 auto;
+    }
+    .card-item a {
+      @apply hover:underline;
+    }
+    .card-visit a {
+      @apply text-blue-500 hover:text-blue-600;
+    }
+    .card-dir span:last-child {
+      @apply text-gray-500 hover:text-gray-600;
+    }
+    .card-filelist {
+      @apply flex flex-wrap -mt-2;
+    }
+    .card-file .card-label {
+      @apply pt-[5px];
+    }
+    .card-filelist a {
+      @apply mr-2 mt-2 bg-gray-100 border text-[color:var(--c)] border-gray-300 rounded-md px-[8px] py-[5px] flex items-center justify-center;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1 class="title">
+      <a href="<%= projectPath %>" target="_blank"><%= name %></a>
+    </h1>
+    <div class="card-outer">
+      <ul class="card">
+        <% pages && pages.forEach(function(item) { %>
+          <li class="card-inner">
+            <a href="<%= item.entry %>" target="_blank" class="card-head">
+              <h2 class="card-head-title">
+                <span class="card-title" title="<%= item.title %>"><%= item.title %></span>
+                <% if (!!item.active) { %>
+                <span class="card-active " >
+                  <span class="card-active-ping"></span>
+                  <span class="card-active-span"></span>
+                </span>
+                <% } %>
+              </h2>
+            </a>
+            <div class="card-content">
+              <div class="card-item card-visit">
+                <span class="card-label">访问地址:</span>
+                <a target="_blank" href="<%= item.entry %>"><%= item.entry %></a>
+              </div>
+              <div class="card-item card-dir">
+                <span class="card-label">文件目录:</span>
+                <span><%= item.directory %></span>
+              </div>
+              <div class="card-item card-file">
+                <span class="card-label">文件列表:</span>
+                <div class="card-filelist">
+                  <% item.fileList && Object.entries(item.fileList).forEach(function([file, path]) { %>
+                    <a target="_blank" href="<%= path %>" style="--c: <%= getRandomDarkColor() %>"><%= file %></a>
+                  <% }) %>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+  </main>
+</body>
+
+</html>

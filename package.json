@@ -1,0 +1,112 @@
+{
+  "name": "unplugin-nav-entry",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.7.3",
+  "description": "Provide a nav entry page for MPA",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/aliuq/unplugin-nav-entry#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliuq/unplugin-nav-entry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aliuq/unplugin-nav-entry/issues"
+  },
+  "keywords": [
+    "unplugin",
+    "vite",
+    "webpack",
+    "mpa",
+    "nav"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "import": "./dist/vite.js",
+      "require": "./dist/vite.cjs"
+    },
+    "./webpack": {
+      "types": "./dist/webpack.d.ts",
+      "import": "./dist/webpack.js",
+      "require": "./dist/webpack.cjs"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js",
+      "require": "./dist/types.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.16.1"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch src --watch public/*.html",
+    "build:fix": "tsx scripts/postbuild.ts",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp && npm publish",
+    "test": "vitest"
+  },
+  "peerDependencies": {
+    "html-webpack-plugin": "^4 || ^5",
+    "vite": ">=3",
+    "webpack": "^4 || ^5"
+  },
+  "peerDependenciesMeta": {
+    "webpack": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    },
+    "html-webpack-plugin": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "kolorist": "^1.8.0",
+    "unplugin": "^1.4.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.40.3",
+    "@types/debug": "^4.1.8",
+    "@types/html-webpack-plugin": "^3.2.6",
+    "@types/node": "^20.5.9",
+    "bumpp": "^9.2.0",
+    "debug": "^4.3.4",
+    "ejs": "^3.1.9",
+    "eslint": "^8.48.0",
+    "fast-glob": "^3.3.1",
+    "html-webpack-plugin": "^4.5.2",
+    "open": "^9.1.0",
+    "tsup": "^7.2.0",
+    "tsx": "^3.12.8",
+    "typescript": "^4.9.5",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.3",
+    "webpack": "^4.46.0"
+  }
+}
+
