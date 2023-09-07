@@ -10,9 +10,4 @@ export default <Options>{
   splitting: true,
   shims: false,
   onSuccess: 'npm run build:fix',
-  external: [
-    'html-webpack-plugin',
-    'fast-glob',
-    'open',
-  ],
 }
