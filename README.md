@@ -189,13 +189,13 @@ export const defaultOptions: Options = {
 
 示例 1
 
-源码: `window.document.title = 'xxxxxxxxxxxxxxxxxxxxxx'`
-正则: `/window\.document\.title\s?=\s?['"](.*?)['"]/`
++ 源码: `window.document.title = 'xxxxxxxxxxxxxxxxxxxxxx'`
++ 正则: `/window\.document\.title\s?=\s?['"](.*?)['"]/`
 
 示例 2
 
-源码: `<my-base title="xxxxxxxxxxxxxxxxxxxxxx"></my-base>`
-正则: `/<my-base\stitle=['"](.*?)['"]><\/my-base>/`
++ 源码: `<my-base title="xxxxxxxxxxxxxxxxxxxxxx"></my-base>`
++ 正则: `/<my-base\stitle=['"](.*?)['"]><\/my-base>/`
 
 #### urlScheme
 
