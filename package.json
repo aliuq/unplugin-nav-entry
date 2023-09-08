@@ -1,7 +1,7 @@
 {
   "name": "unplugin-nav-entry",
   "type": "module",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "packageManager": "pnpm@8.7.3",
   "description": "Provide a nav entry page for MPA",
   "license": "Apache-2.0",
@@ -119,4 +119,3 @@
     ]
   }
 }
-
