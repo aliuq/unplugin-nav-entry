@@ -5,12 +5,11 @@ import fg from 'fast-glob'
 import Debug from 'debug'
 import type { UnpluginContextMeta } from 'unplugin'
 import type { ViteDevServer } from 'vite'
-import { normalizePath } from 'vite'
 import { bold, green, yellow } from 'kolorist'
 import type { Options, Page, Params, ResolvedOptions } from '../types'
 import { resolveOptions } from './options'
 import { UNPLUGIN_NAME } from './constants'
-import { getRandomDarkColor, openBrowser, setFirstSlash } from './utils'
+import { getRandomDarkColor, normalizePath, openBrowser, setFirstSlash } from './utils'
 
 const debug = {
   warn: Debug(`${UNPLUGIN_NAME}:warn`),

@@ -1,4 +1,5 @@
 import path from 'node:path'
+import os from 'node:os'
 
 /**
  * 使用默认浏览器打开网址
@@ -39,4 +40,16 @@ export function getRandomDarkColor() {
   const hslColor = `hsl(${randomHue}, ${randomSaturation}%, ${randomLightness}%)`
 
   return hslColor
+}
+
+const windowsSlashRE = /\\/g
+export function slash(p: string): string {
+  return p.replace(windowsSlashRE, '/')
+}
+
+export const isWindows = os.platform() === 'win32'
+
+// https://github.com/vitejs/vite/blob/4fb617f0f5788e079cb76dd2d695c6dc08377d31/packages/vite/src/node/utils.ts#L214
+export function normalizePath(id: string): string {
+  return path.posix.normalize(isWindows ? slash(id) : id)
 }
