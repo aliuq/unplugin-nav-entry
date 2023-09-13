@@ -1,6 +1,12 @@
 <!-- markdownlint-disable MD033 -->
 # unplugin-nav-entry
 
+<p align="left">
+<img src="https://img.shields.io/npm/l/unplugin-nav-entry" alt="license">
+<a href="https://www.npmjs.com/package/unplugin-nav-entry"><img src="https://img.shields.io/npm/v/unplugin-nav-entry" alt="version"></a>
+<img src="https://img.shields.io/npm/dw/unplugin-nav-entry" alt="download">
+</p>
+
 提供一个导航页面，支持 Vite、Webpack、vue-cli
 
 + 快速定位、访问具体页面
