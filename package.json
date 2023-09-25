@@ -58,7 +58,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">=14.21.3"
+    "node": ">=8.9.0"
   },
   "scripts": {
     "build": "tsup",
