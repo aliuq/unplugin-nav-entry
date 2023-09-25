@@ -1,6 +1,8 @@
 import { basename, dirname, resolve } from 'node:path'
 import { promises as fs } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import readline from 'node:readline'
+import process from 'node:process'
 import fg from 'fast-glob'
 import { cyan, inverse } from 'kolorist'
 
@@ -31,3 +33,6 @@ async function run() {
 }
 
 run()
+
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+rl.question('Input:', answer => rl.close())
