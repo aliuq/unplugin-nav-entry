@@ -3,15 +3,14 @@
 
 <p align="left">
 <img src="https://img.shields.io/npm/l/unplugin-nav-entry" alt="license">
-<a href="https://www.npmjs.com/package/unplugin-nav-entry"><img src="https://img.shields.io/npm/v/unplugin-nav-entry" alt="version"></a>
+<a target="_blank" href="https://www.npmjs.com/package/unplugin-nav-entry"><img src="https://img.shields.io/npm/v/unplugin-nav-entry" alt="version"></a>
 <img src="https://img.shields.io/npm/dw/unplugin-nav-entry" alt="download">
 </p>
 
 提供一个导航页面，支持 Vite、Webpack、vue-cli
 
-+ 快速定位、访问具体页面
-+ 快速打开页面源码
-+ 对整个项目的功能模块有一个简短的认知
++ 快速访问页面
++ 快速打开文件
 
 ![2.png](./screenshorts/2.png)
 
@@ -285,3 +284,29 @@ Entries 的格式应该如下所示：
   "/src/modules/baz"
 ]
 ```
+
+## 开发
+
+```bash
+pnpm install
+pnpm run dev
+```
+
+接下来，复制项目目录绝对路径，在多页面项目中，添加下面依赖，修改 `D:/xxx/unplugin-nav-entry` 为复制的路径
+
+```json
+// package.json
+{
+  "devDependencies": {
+    "unplugin-nav-entry": "file:D:/xxx/unplugin-nav-entry"
+  }
+}
+```
+
+执行下面命令，将绝对路径转为相对路径
+
+```bash
+pnpm install unplugin-nav-entry
+```
+
+修改 src 目录下的文件，进行开发
