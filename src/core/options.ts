@@ -1,7 +1,7 @@
 import type { Options, ResolvedOptions } from '../types'
 
 export const defaultOptions: Options = {
-  source: '**/main.ts',
+  source: '**/*/main.(js|ts)',
   cwd: 'src/modules',
   urlScheme: 'vscode',
   titleRule: [],
