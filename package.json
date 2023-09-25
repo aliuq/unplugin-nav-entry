@@ -61,7 +61,7 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup --env.NODE_ENV production",
     "dev": "tsup --watch src --watch public/*.html",
     "build:fix": "tsx scripts/postbuild.ts",
     "lint": "eslint .",

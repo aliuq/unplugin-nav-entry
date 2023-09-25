@@ -6,6 +6,7 @@ import process from 'node:process'
 import fg from 'fast-glob'
 import { cyan, inverse } from 'kolorist'
 
+const isProd = process.env?.NODE_ENV?.trim?.() === 'production'
 const r = (file: string) => resolve(dirname(fileURLToPath(import.meta.url)), file)
 const dist = r('../dist')
 
@@ -34,5 +35,7 @@ async function run() {
 
 run()
 
-const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
-rl.question('Input:', answer => rl.close())
+if (!isProd) {
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+  rl.question('Input:', _ => rl.close())
+}
