@@ -93,7 +93,7 @@ module.exports = {
   configureWebpack: {
     plugins: [
       require('unplugin-nav-entry/webpack')({
-        source: '**/main.js',
+        source: '**/*/main.js',
         cwd: 'src/modules',
         titleRule: [
           /window\.document\.title\s?=\s?['"](.*?)['"]/
@@ -120,7 +120,7 @@ import NavEntry from 'unplugin-nav-entry/vite'
 export default defineConfig({
   plugins: [
     NavEntry({
-      source: '**/main.ts',
+      source: '**/*/main.ts',
       cwd: 'src/modules',
       urlScheme: 'vscode',
       titleRule: [/document\.title\s?=\s?['"](.*?)['"]/],
@@ -153,7 +153,7 @@ export default defineConfig({
 
 ```ts
 export const defaultOptions: Options = {
-  source: '**/main.ts',
+  source: '**/*/main.(js|ts)',
   cwd: 'src/modules',
   urlScheme: 'vscode',
   titleRule: [],
@@ -176,7 +176,7 @@ export const defaultOptions: Options = {
 #### source
 
 + 类型: `string | string[]`
-+ 默认值: `**/main.ts`
++ 默认值: `**/*/main.(js|ts)`
 
 匹配规则，支持 glob 语法，例如 `**` 代表任意层级，`*` 代表任意字符
 
