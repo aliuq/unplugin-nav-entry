@@ -14,6 +14,6 @@ export default defineConfig((option) => {
     splitting: true,
     shims: false,
     onSuccess: `set NODE_ENV=${nodeEnv} && npm run build:fix`,
-    target: 'es2020',
+    target: 'node10',
   }
 })
